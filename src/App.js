@@ -9,6 +9,10 @@ function App() {
           <img src={logo} alt='logo'></img>
           <p><strong>Alura</strong>Videos</p>
         </div>
+        <div className='logo'>
+          <img src={logo} alt='logo'></img>
+          <p><strong>Alura</strong>Videos</p>
+        </div>
       </header>
     </div>
   );
