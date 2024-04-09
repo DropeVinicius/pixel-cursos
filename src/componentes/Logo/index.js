@@ -7,9 +7,9 @@ function Logo() {
             <img 
                 src={logo} 
                 alt='logo' 
-                classname='logo-img'>
+                className='logo-img'>
             </img>
-            <p><strong>Alura</strong>Videos</p>
+            <p><strong>Cursos</strong>Certificação</p>
         </div>
     )
 }
