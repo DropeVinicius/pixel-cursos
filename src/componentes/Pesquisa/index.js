@@ -22,12 +22,28 @@ const Subtitulo = styled.h3 `
     font-weight: 500;
     margin-bottom: 40px;
 `
+const Resultado = styled.div `
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
 
+    p {
+        width: 200px;
+    }
+
+    img {
+        width: 100px;
+    }
+
+    &:hover {
+        border: 1px solid white;
+    }
+`
 
 function Pesquisa () {
     const [cursosPesquisados, setCursosPesquisados] = useState([])
-
-    console.log(cursosPesquisados)
 
     return (
         <PesquisaContainer>
@@ -41,6 +57,12 @@ function Pesquisa () {
                     setCursosPesquisados(resultadoPesquisa)
                 }}
             />
+            {cursosPesquisados.map( curso => (
+                <Resultado>
+                    <p>{curso.nome}</p>
+                    <img src={curso.src}/>
+                </Resultado>
+            ) ) }
         </PesquisaContainer>
     )
 }
