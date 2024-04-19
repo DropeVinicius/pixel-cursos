@@ -1,4 +1,4 @@
-import logo from '../../imagens/logo.svg'
+import logo from '../../imagens/logox.svg'
 import styled from 'styled-components'
 
 const LogoContainer = styled.div`
@@ -17,7 +17,7 @@ function Logo() {
                 src={logo}
                 alt='logo'
             />
-            <p><strong>Cursos </strong>Certificação</p>
+            <p>Cursos</p>
         </LogoContainer>
     )
 }
