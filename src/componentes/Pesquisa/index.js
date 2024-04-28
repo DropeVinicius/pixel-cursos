@@ -1,7 +1,10 @@
 import Input from '../Input'
 import styled from 'styled-components'
 import { useState } from 'react'
-import { cursos } from './dadosPesquisa'
+import { useEffect } from 'react'
+import { getCursos } from '../../servicos/cursos'
+import { postFavorito } from '../../servicos/favoritos'
+
 
 const PesquisaContainer = styled.section `
     background-image: linear-gradient (90deg, #002F52 35%, #326589 165%);
@@ -44,6 +47,24 @@ const Resultado = styled.div `
 
 function Pesquisa () {
     const [cursosPesquisados, setCursosPesquisados] = useState([])
+    const [ cursos, setCursos ] = useState([])
+
+    useEffect(() => {
+        fetchCursos()
+    }, [])
+
+    async function fetchCursos () {
+        const cursosDaAPI = await getCursos()
+        setCursos(cursosDaAPI)
+    }
+
+    async function insertFavorito(id) {
+        //await postFavorito(id)
+        alert(`Curso de id:${id} inserido!`)
+    } 
+        
+        
+    
 
     return (
         <PesquisaContainer>
@@ -53,12 +74,12 @@ function Pesquisa () {
                 placeholder="Escreva o tipo de curso"
                 onBlur={evento => {
                     const textoDigitado = evento.target.value
-                    const resultadoPesquisa = cursos.filter( cursos => cursos.nome.includes(textoDigitado))
+                    const resultadoPesquisa = cursos.filter( curso => curso.nome.includes(textoDigitado))
                     setCursosPesquisados(resultadoPesquisa)
                 }}
             />
             {cursosPesquisados.map( curso => (
-                <Resultado>
+                <Resultado onClick={() => insertFavorito(curso.id)}>
                     <p>{curso.nome}</p>
                     <img src={curso.src}/>
                 </Resultado>
