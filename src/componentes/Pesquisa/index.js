@@ -59,13 +59,10 @@ function Pesquisa () {
     }
 
     async function insertFavorito(id) {
-        //await postFavorito(id)
-        alert(`Curso de id:${id} inserido!`)
+        await postFavorito(id)
+        alert(`Curso de id:${id} inserido com sucesso!`)
     } 
         
-        
-    
-
     return (
         <PesquisaContainer>
             <Titulo>Já sabe qual certificação deseja?</Titulo>
@@ -80,8 +77,8 @@ function Pesquisa () {
             />
             {cursosPesquisados.map( curso => (
                 <Resultado onClick={() => insertFavorito(curso.id)}>
+                    <img src={curso.src} />
                     <p>{curso.nome}</p>
-                    <img src={curso.src}/>
                 </Resultado>
             ) ) }
         </PesquisaContainer>
