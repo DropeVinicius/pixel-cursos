@@ -1,8 +1,9 @@
 import { cursos } from './dadosUltimosLancamentos'
 import { Titulo } from '../Titulo'
 import CardRecomenda from '../CardRecomenda'
-import imagemLivro from '../../imagens/livro2.png'
+import imagemLivro from '../../imagens/livro3.png'
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 const UltimosLancamentosContainer = styled.section`
     background-color: #EBECEE;
@@ -13,15 +14,18 @@ const UltimosLancamentosContainer = styled.section`
 
 const NovosCursosContainer = styled.div `
     margin-top: 30px;
+    margin-bottom: 30px;
     display: flex;
     width: 100%;
-    justify-content: center;
+    justify-content: space-around;
     cursor: pointer;
 `
+const estiloImagem = {
+    borderRadius: '10px'
+}
 
 function UltimosLancamentos() {
     return (
-        
         <UltimosLancamentosContainer>
             <Titulo 
                 cor="#EB9B00" 
@@ -31,13 +35,15 @@ function UltimosLancamentos() {
             </Titulo>
             <NovosCursosContainer>
                 {cursos.map (curso => (
-                    <img src={curso.src} />
+                        <NavLink to={curso.link} key={curso.id}>
+                            <img src={curso.src} style={estiloImagem}/>
+                        </NavLink>
                 ))}
-            </NovosCursosContainer>
+            </NovosCursosContainer>     
             <CardRecomenda
                 titulo="Talvez você se interesse por"
-                subtitulo="Angular 11"
-                descricao="Construindo uma aplicação integrada com a plataforma Google"
+                subtitulo="Microsoft Certified: Azure Fundamentals"
+                descricao="Demonstrar conhecimento fundamental dos conceitos de nuvem e dos principais serviços do Azure, além de recursos e ferramentas de gerenciamento e governança do Azure."
                 img={imagemLivro}
             />   
         </UltimosLancamentosContainer>

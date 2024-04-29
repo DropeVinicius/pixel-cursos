@@ -1,4 +1,4 @@
-import logo from '../../imagens/logo.svg'
+import logo from '../../imagens/logonew.svg'
 import styled from 'styled-components'
 
 const LogoContainer = styled.div`
@@ -17,7 +17,6 @@ function Logo() {
                 src={logo}
                 alt='logo'
             />
-            <p>AluraBooks</p>
         </LogoContainer>
     )
 }
