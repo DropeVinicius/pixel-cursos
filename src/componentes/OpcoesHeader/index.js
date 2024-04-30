@@ -1,6 +1,13 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+// Definacao do estilo do link
+const StyledLink = styled(Link)`
+  text-decoration: none; /* Remova o sublinhado */
+  color: inherit; /* Use a cor padrão do texto */
+`;
+
+// Componente Opcao estilizado
 const Opcao = styled.li`   
     font-size: 16px;
     display: flex;
@@ -23,7 +30,12 @@ function OpcoesHeader () {
     return (
         <Opcoes>
             { textoOpcoes.map( (texto) => (
-                <Link to={`/${texto.toLowerCase()}`}><Opcao><p>{texto}</p></Opcao></Link>
+                <StyledLink 
+                        to={`/${texto.toLowerCase()}`}>
+                    <Opcao>
+                        <p>{texto}</p>
+                    </Opcao>
+                </StyledLink>
             ) ) }
         </Opcoes>
     )
