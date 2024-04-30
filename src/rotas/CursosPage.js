@@ -58,7 +58,7 @@ function CursosPage() {
     return (
         <AppContainer>
             <div>
-                <Titulo>Aqui estão nossos treinamentos</Titulo>
+                <Titulo>Aqui estão nossos cursos</Titulo>
                 <ResultadoContainer>
                     {
                         cursos.length !== 0 ? cursos.map(curso => (
