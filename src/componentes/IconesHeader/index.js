@@ -1,5 +1,5 @@
 import perfil from '../../imagens/perfil.svg'
-import sacola from '../../imagens/sacola.svg'
+// import sacola from '../../imagens/sacola.svg'
 import styled from 'styled-components'
 
 const Icone = styled.li`   
@@ -12,7 +12,7 @@ const Icones = styled.ul`
     align-items: center;
 `
 
-const icones = [perfil, sacola]
+const icones = [perfil]
 
 
 function IconesHeader () {

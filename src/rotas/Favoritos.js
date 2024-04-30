@@ -64,7 +64,7 @@ function Favoritos() {
   return (
     <AppContainer>
       <div>
-        <Titulo>Aqui estão seus livros favoritos:</Titulo>
+        <Titulo>Aqui estão seus cursos favoritos:</Titulo>
         <ResultadoContainer>
           {
             favoritos.length !== 0 ? favoritos.map(favorito => (
