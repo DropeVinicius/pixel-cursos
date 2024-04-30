@@ -4,7 +4,6 @@ import { deleteFavorito, getFavoritos } from '../servicos/favoritos';
 import livroImg from '../imagens/livro.png'
 
 
-
 const AppContainer = styled.div`
       width: 100vw;
       height: 100vh;
@@ -64,7 +63,7 @@ function Favoritos() {
   return (
     <AppContainer>
       <div>
-        <Titulo>Aqui estão seus cursos favoritos:</Titulo>
+        <Titulo>Aqui estão seus treinamentos favoritos:</Titulo>
         <ResultadoContainer>
           {
             favoritos.length !== 0 ? favoritos.map(favorito => (
