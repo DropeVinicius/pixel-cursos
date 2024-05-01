@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import livroImg from '../imagens/livro.png'
 import { getCursos } from '../servicos/cursos';
+import { postFavorito } from '../servicos/favoritos'
 
+ //Defina o estilo dos componentes
 const AppContainer = styled.div`
       width: 100vw;
       height: 100vh;
@@ -40,9 +42,22 @@ const Titulo = styled.h2`
     padding-top: 35px
 `
 
+//Componente da página de cursos
 function CursosPage() {
     const [cursos, setCursos] = useState([]);
 
+    // Função para lidar com a adição de um curso aos favoritos
+    async function adicionarFavorito(id){
+        try {
+            await postFavorito(id);
+            alert('Curso adicionado aos favoritos com sucesso!');
+        }   catch (error) {
+            console.error('Erro ao adicionar curso aos favoritos', error);
+            alert('Erro ao adicionar curso aos favoritos. Por favor, tente novamente mais tarde.');
+        }
+    }
+
+    // Busca os cursos ao montar o componente
     useEffect(() => {
         async function fetchCursos() {
             try {
@@ -62,7 +77,7 @@ function CursosPage() {
                 <ResultadoContainer>
                     {
                         cursos.length !== 0 ? cursos.map(curso => (
-                            <Resultado>
+                            <Resultado key={curso.id} onClick={() => adicionarFavorito(curso.id)}>
                                 <p>{curso.nome}</p>
                                 <img src={livroImg} />
                             </Resultado>
