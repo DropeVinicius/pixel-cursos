@@ -71,7 +71,7 @@ function Favoritos() {
               <Resultado onClick={() => deletarFavorito(favorito.id)} >
                 <p>{favorito.nome}</p>
                 <img src={livroImg} />
-                <AdicionarRemoverIcone cursoId={favorito.id} isFavoritoInicial={true}/>
+                <AdicionarRemoverIcone cursoId={favorito.id} isFavoritoInicial={true} />
               </Resultado>
             )) : null
           }
