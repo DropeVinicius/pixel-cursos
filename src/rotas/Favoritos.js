@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components'
 import { deleteFavorito, getFavoritos } from '../servicos/favoritos';
 import livroImg from '../imagens/livro.png'
+import AdicionarRemoverIcone from '../componentes/AdicionarRemoverIcone/AdicionarRemoverIcone';
 
 
 const AppContainer = styled.div`
@@ -70,6 +71,7 @@ function Favoritos() {
               <Resultado onClick={() => deletarFavorito(favorito.id)} >
                 <p>{favorito.nome}</p>
                 <img src={livroImg} />
+                <AdicionarRemoverIcone cursoId={favorito.id} isFavoritoInicial={true}/>
               </Resultado>
             )) : null
           }

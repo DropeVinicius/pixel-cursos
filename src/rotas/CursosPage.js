@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import livroImg from '../imagens/livro.png'
 import { getCursos } from '../servicos/cursos';
 import { postFavorito } from '../servicos/favoritos'
+import AdicionarRemoverIcone from '../componentes/AdicionarRemoverIcone/AdicionarRemoverIcone';
 
  //Defina o estilo dos componentes
 const AppContainer = styled.div`
@@ -80,6 +81,7 @@ function CursosPage() {
                             <Resultado key={curso.id} onClick={() => adicionarFavorito(curso.id)}>
                                 <p>{curso.nome}</p>
                                 <img src={livroImg} />
+                                <AdicionarRemoverIcone cursoId={curso.id} isFavoritoInicial={false}/>
                             </Resultado>
                         )) : null
                     }
