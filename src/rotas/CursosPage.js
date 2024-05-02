@@ -28,9 +28,7 @@ const Resultado = styled.div`
         width: 200px;
         color: #FFF;
     }
-    img {
-        width: 100px;
-    }
+    
     &:hover {
         border: 1px solid white;
     }
@@ -41,6 +39,13 @@ const Titulo = styled.h2`
     text-align: center;
     width: 100%;
     padding-top: 35px
+`
+const ImagemContainer = styled.div `
+    width: 100px;
+`
+
+const IconeContainer = styled.div `
+    width: 50px;
 `
 
 //Componente da página de cursos
@@ -79,12 +84,16 @@ function CursosPage() {
                     {
                         cursos.length !== 0 ? cursos.map(curso => (
                             <Resultado key={curso.id} onClick={() => adicionarFavorito(curso.id)}>
+                                <ImagemContainer>
+                                <IconeContainer>
                                 <p>{curso.nome}</p>
                                 <img src={livroImg} />
-                                <AdicionarRemoverIcone cursoId={curso.id} isFavoritoInicial={false}/>
-                            </Resultado>
+                                <AdicionarRemoverIcone cursoId={curso.id} isFavoritoInicial={false}/>  
+                                </IconeContainer>
+                                </ImagemContainer>
+                            </Resultado>     
                         )) : null
-                    }
+                    } 
                 </ResultadoContainer>
             </div>
         </AppContainer>

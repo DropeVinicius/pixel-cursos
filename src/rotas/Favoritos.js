@@ -28,9 +28,7 @@ const Resultado = styled.div`
         width: 200px;
         color: #FFF;
     }
-    img {
-        width: 100px;
-    }
+    
     &:hover {
         border: 1px solid white;
     }
@@ -41,6 +39,13 @@ const Titulo = styled.h2`
     text-align: center;
     width: 100%;
     padding-top: 35px
+`
+const ImagemContainer = styled.div`
+    width: 100px;
+`
+
+const IconeContainer = styled.div`
+    width: 50px;
 `
 
 function Favoritos() {
@@ -69,9 +74,13 @@ function Favoritos() {
           {
             favoritos.length !== 0 ? favoritos.map(favorito => (
               <Resultado onClick={() => deletarFavorito(favorito.id)} >
-                <p>{favorito.nome}</p>
-                <img src={livroImg} />
-                <AdicionarRemoverIcone cursoId={favorito.id} isFavoritoInicial={true} />
+                <ImagemContainer>
+                  <IconeContainer>
+                  <p>{favorito.nome}</p>
+                  <img src={livroImg} />
+                    <AdicionarRemoverIcone cursoId={favorito.id} isFavoritoInicial={true} />
+                  </IconeContainer>
+                </ImagemContainer>
               </Resultado>
             )) : null
           }
