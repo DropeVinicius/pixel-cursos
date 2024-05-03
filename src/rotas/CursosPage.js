@@ -7,8 +7,8 @@ import AdicionarRemoverIcone from '../componentes/AdicionarRemoverIcone/Adiciona
 
  //Defina o estilo dos componentes
 const AppContainer = styled.div`
-     /* width: 100vw; */
-     /* height: 100vh; */
+      width: 100vw; 
+      height: 100vh; 
       background-image: linear-gradient(90deg, #002F52 35%, #326589); 
 `
 const ResultadoContainer = styled.div`
