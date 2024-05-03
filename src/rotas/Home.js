@@ -4,8 +4,9 @@ import UltimosLancamentos from '../componentes/UltimosLancamentos'
 import styled from 'styled-components'
 
 const AppContainer = styled.div`
-      width: 100vw;
-      height: 100vh;
+      width: 100%
+      max-width: 1200px;
+      padding: 20px;
       background-image: linear-gradient(90deg, #002F52 35%, #326589); 
 `
 
