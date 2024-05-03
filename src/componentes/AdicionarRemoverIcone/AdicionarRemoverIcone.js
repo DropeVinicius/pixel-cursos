@@ -17,10 +17,15 @@ import { getFavoritos, postFavorito, deleteFavorito } from '../../servicos/favor
 
         React.useEffect(() => {
             async function verificaFavorito() {
+                try {
                 const favoritos = await getFavoritos();
-                const favoritoIds = favoritos.map(favorito => favorito.id);
+                console.log('Favoritos:', favoritos);
+                const favoritoIds = favoritos.map(favorito => favorito ? favorito.id : null);
                 setIsFavorito(favoritoIds.includes(cursoId));
+            } catch (error) {
+                console.error('Erro ao buscar favoritos:', error);
             }
+        }
            verificaFavorito(); 
         }, [cursoId]); 
 

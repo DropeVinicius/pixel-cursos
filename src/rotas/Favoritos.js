@@ -86,15 +86,17 @@ function Favoritos() {
         <ResultadoContainer>
           {
             favoritos.length !== 0 ? favoritos.map(favorito => (
-              <Resultado onClick={() => deletarFavorito(favorito.id)} >
+              favorito ? (
+              <Resultado onClick={() => deletarFavorito(favorito.id)} key={favorito.id} >
                 <ImagemContainer>
                   <IconeContainer>
-                  <p>{favorito.nome}</p>
-                  <img src={livroImg} />
+                    <p>{favorito.nome}</p>
+                    <img src={livroImg} />
                     <AdicionarRemoverIcone cursoId={favorito.id} isFavoritoInicial={true} />
                   </IconeContainer>
                 </ImagemContainer>
               </Resultado>
+              ) : null
             )) : null
           }
         </ResultadoContainer>

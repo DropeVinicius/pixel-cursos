@@ -5,7 +5,7 @@ import { getCursos } from '../servicos/cursos';
 import { postFavorito } from '../servicos/favoritos'
 import AdicionarRemoverIcone from '../componentes/AdicionarRemoverIcone/AdicionarRemoverIcone';
 
- //Defina o estilo dos componentes
+//Defina o estilo dos componentes
 const AppContainer = styled.div`
     width: 100%; 
     min-height: 100vh; 
@@ -52,12 +52,12 @@ const Titulo = styled.h2`
     padding-top: 35px
     margin-bottom: 20px;
 `
-const ImagemContainer = styled.div `
+const ImagemContainer = styled.div`
     width: 100px;
     margin-right: 30px;
 `
 
-const IconeContainer = styled.div `
+const IconeContainer = styled.div`
     width: 210px;
 `
 
@@ -66,11 +66,12 @@ function CursosPage() {
     const [cursos, setCursos] = useState([]);
 
     // Função para lidar com a adição de um curso aos favoritos
-    async function adicionarFavorito(id){
+    async function adicionarFavorito(id) {
         try {
+            console.log('ID do curso:', id);
             await postFavorito(id);
             alert('Curso adicionado aos favoritos com sucesso!');
-        }   catch (error) {
+        } catch (error) {
             console.error('Erro ao adicionar curso aos favoritos', error);
             alert('Erro ao adicionar curso aos favoritos. Por favor, tente novamente mais tarde.');
         }
@@ -101,12 +102,12 @@ function CursosPage() {
                                     <IconeContainer>
                                         <p>{curso.nome}</p>
                                         <img src={livroImg} />
-                                        <AdicionarRemoverIcone cursoId={curso.id} isFavoritoInicial={false}/>  
+                                        <AdicionarRemoverIcone cursoId={curso.id} isFavoritoInicial={false} />
                                     </IconeContainer>
                                 </ImagemContainer>
-                            </Resultado>     
+                            </Resultado>
                         )) : null
-                    } 
+                    }
                 </ResultadoContainer>
             </div>
         </AppContainer>
