@@ -1,7 +1,6 @@
 import Input from '../Input'
 import styled from 'styled-components'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { getCursos } from '../../servicos/cursos'
 import { postFavorito } from '../../servicos/favoritos'
 
@@ -10,9 +9,8 @@ const PesquisaContainer = styled.section `
     background-image: linear-gradient (90deg, #002F52 35%, #326589 165%);
     color: #FFF;
     text-align: center;
-    padding: 85px 0;
-    height: 270px;
-    width: 100%;
+    padding: 85px 20px;
+    height: auto; /* Remover altura fixa */
 `
 const Titulo = styled.h2 `
     color: #FFF;
@@ -23,11 +21,11 @@ const Titulo = styled.h2 `
 const Subtitulo = styled.h3 `
     font-size: 16px;
     font-weight: 500;
-    margin-bottom: 40px;
+    margin-bottom: 20px; /* Reduzindo a margem inferior */
 `
 const Resultado = styled.div `
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Alterando para coluna para telas menores */
     align-items: center;
     margin-bottom: 20px;
     cursor: pointer;
@@ -38,6 +36,7 @@ const Resultado = styled.div `
 
     img {
         width: 100px;
+        height: auto; /* Permitindo que a altura seja ajustada automaticamente */
     }
 
     &:hover {

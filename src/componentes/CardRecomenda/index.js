@@ -7,10 +7,10 @@ const Card = styled.div`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     display: flex;
-    margin: 0 auto;
-    max-width: 600px;
-    padding: 25px 20px;
-    justify-content: space-around;
+    flex-direction: column; /* Alterando para coluna para telas menores */
+    margin: 20px 0; /* Aumentando a margem inferior */
+    max-width: 300px; /* Reduzindo a largura máxima para dispositivos menores */
+    padding: 20px;
     width: 100%;
 `
 const Botao = styled.button`
@@ -22,7 +22,8 @@ const Botao = styled.button`
     font-weight: 900;
     display: block;
     text-align: center;
-    width: 150px;
+    width: 100% /* Ajustando a largura do botão */
+    margin-top: 10px; /* Adicionando margem superior */
 
     &:hover {
         cursor: pointer;
@@ -39,6 +40,7 @@ const Subtitulo = styled.h4 `
 `
 const ImgLivro = styled.img `
     width: 150px;
+    height: auto; /* Permitindo que a altura seja ajustada automaticamente */
 `
 
 function CardRecomenda ({titulo, subtitulo, descricao, img}) {

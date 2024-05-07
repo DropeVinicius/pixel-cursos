@@ -15,13 +15,16 @@ const Opcao = styled.li`
     align-items: center;
     text-align: center;
     height: 100%;
-    padding: 0 5px;
+    padding: 0 10px; /* Aumenta o espaço ao redor do texto */
     cursor: pointer;
-    min-width: 120px;
+    min-width: 100px; /* Defina uma largura mínima */
 `
 
 const Opcoes = styled.ul`
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Adiciona espaço entre as opções */
 `
 
 const textoOpcoes = ['CURSOS','FAVORITOS']
