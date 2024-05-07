@@ -1,3 +1,4 @@
+import React from 'react'
 import { cursos } from './dadosUltimosLancamentos'
 import { Titulo } from '../Titulo'
 import CardRecomenda from '../CardRecomenda'
@@ -35,8 +36,8 @@ function UltimosLancamentos() {
             </Titulo>
             <NovosCursosContainer>
                 {cursos.map (curso => (
-                        <NavLink to={curso.link} key={curso.id}>
-                            <img src={curso.src} style={estiloImagem}/>
+                        <NavLink to={`/player?id=${curso.id}`} key={curso.id}>
+                            <img src={curso.src} style={estiloImagem} alt={curso.nome}/>
                         </NavLink>
                 ))}
             </NovosCursosContainer>     
