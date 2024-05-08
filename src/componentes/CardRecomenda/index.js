@@ -15,15 +15,18 @@ const Card = styled.div`
 `
 const Botao = styled.button`
     background-color: #EB9B00;
+    border-radius: 5px;
     color: #FFF;
     padding: 10px 0px;
     font-size: 16px;
     border: none;
     font-weight: 900;
-    display: block;
     text-align: center;
-    width: 100% /* Ajustando a largura do botão */
+    width: 150px; /* Ajustando a largura do botão */
     margin-top: 10px; /* Adicionando margem superior */
+    display: flex; /* Utilizando flexbox */
+    justify-content: center; /* Centralizando horizontalmente */
+    align-items: center; /* Centralizando verticalmente */
 
     &:hover {
         cursor: pointer;
@@ -40,6 +43,7 @@ const Subtitulo = styled.h4 `
 `
 const ImgLivro = styled.img `
     width: 150px;
+    border-radius: 10px;
     height: auto; /* Permitindo que a altura seja ajustada automaticamente */
 `
 
