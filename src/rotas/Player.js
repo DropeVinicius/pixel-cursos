@@ -27,11 +27,15 @@ const VideoContainer = styled.div `
 ` 
 
 const VideoPlayer = styled.iframe `
-    width: 100%; /* Alterado para ocupar toda a largura */
-    max-width: 400px; /* Máximo de largura para dispositivos móveis */
-    height: 225px; /* Ajustado para uma proporção 16:9 */
-    aspect-ratio: 16/9; /* Mantém a proporção 16:9 */
-    border: none; /* Removido a borda */
+    width: 100vw;
+    height: 100vh;
+    max-width: 1200px;
+    max-height: 675px;
+
+    @media (max-width: 768px) {
+        max-width: 480px;
+        max-height: 270px;
+    }
 
 ` 
 
