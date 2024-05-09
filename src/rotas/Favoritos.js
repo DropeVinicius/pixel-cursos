@@ -5,15 +5,16 @@ import livroImg from '../imagens/livro.png'
 import AdicionarRemoverIcone from '../componentes/AdicionarRemoverIcone/AdicionarRemoverIcone';
 
 
+//Defina o estilo dos componentes
 const AppContainer = styled.div`
-      width: 100%; 
-      min-height: 100vh; 
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      background-image: linear-gradient(90deg, #002F52 35%, #326589); 
+    width: 100%; 
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(90deg, #002F52 35%, #326589);
+    overflow-x: hidden; /* Impedir rolagem horizontal */
 `
-
 const ResultadoContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -21,21 +22,28 @@ const ResultadoContainer = styled.div`
     max-width: 1200px;
     width: 100%;
     padding: 20px;
+    flex-direction: row; /* Exibição em linha por padrão */
 `
 const Resultado = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px;
     cursor: pointer;
     text-align: center;
     padding: 20px;
     border-radius: 10px;
     transition: box-shadow 0.3s ease;
+    background-color: #002F52;
+    color: #FFF;
+    width: calc(50% - 20px); /* Ajuste para 2 cards por linha */
+    box-sizing: border-box;
+    margin: 10px; /* Adicionando margem para separar os cards */
+    max-width: 300px;
     p {
         width: 200px;
         color: #FFF;
         margin-right: 10px;
+        font-size: 14px;
         display: flex;
         justify-content: center;
     }
@@ -43,18 +51,23 @@ const Resultado = styled.div`
     &:hover {
         border: 0 8px 12px rgba(0, 0, 0, 0.1);
     }
+
+    @media (max-width: 768px) {
+        width: calc(100% - 20px); /* Alterando a largura para ocupar toda a largura da tela em dispositivos móveis */
+    }
 `
 const Titulo = styled.h2`
     color: #FFF;
-    font-size: 36px;
+    font-size: 30px;
     text-align: center;
+    width: 100%;
     padding-top: 35px
     margin-bottom: 20px;
-    width: 100%;
 `
 const ImagemContainer = styled.div`
-    width: 100px;
-    margin-right: 30px;
+    width: 100%;
+    height: auto;
+    margin-right: 10px;
 `
 
 const IconeContainer = styled.div`

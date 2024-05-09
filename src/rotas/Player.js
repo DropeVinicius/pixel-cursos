@@ -11,7 +11,7 @@ const AppContainer = styled.div`
 
 const Titulo = styled.h2`
     color: #FFF;
-    font-size: 36px;
+    font-size: 30px;
     text-align: center;
     padding-top: 35px; 
     margin-bottom: 20px;
@@ -19,7 +19,7 @@ const Titulo = styled.h2`
 `
 
 const VideoContainer = styled.div `
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,8 +27,12 @@ const VideoContainer = styled.div `
 ` 
 
 const VideoPlayer = styled.iframe `
-    width: 1200px; /* Ajuste o tamanho do player conforme necessário */
-    height: 720px; /* Ajuste o tamanho do player conforme necessário */
+    width: 100%; /* Alterado para ocupar toda a largura */
+    max-width: 400px; /* Máximo de largura para dispositivos móveis */
+    height: 225px; /* Ajustado para uma proporção 16:9 */
+    aspect-ratio: 16/9; /* Mantém a proporção 16:9 */
+    border: none; /* Removido a borda */
+
 ` 
 
 

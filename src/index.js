@@ -8,8 +8,6 @@ import Home from './rotas/Home';
 import Favoritos from './rotas/Favoritos';
 import CursosPage from './rotas/CursosPage';
 import Player from './rotas/Player';
-import Login from './componentes/Auth/Login';
-import Cadastro from './componentes/Auth/Cadastro';
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -38,8 +36,6 @@ root.render(
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/cadastro" element={<Cadastro/>} />
         <Route path="/favoritos" element={<Favoritos/>} />
         <Route path="/cursos" element={<CursosPage/>} />
         <Route path="/player" element={<Player/>} />
