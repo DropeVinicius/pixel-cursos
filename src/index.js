@@ -4,6 +4,7 @@ import reportWebVitals from './reportWebVitals'
 import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter } from "react-router-dom"
 import App from './HeaderApp'
+import TelegramButton from './componentes/TelegramButton'
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -31,6 +32,7 @@ root.render(
     <GlobalStyle />
     <BrowserRouter>
       <App />
+      <TelegramButton/>
     </BrowserRouter>
   </React.StrictMode>
 );
