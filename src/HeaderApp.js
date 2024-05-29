@@ -7,7 +7,6 @@ import CursosPage from './rotas/CursosPage'
 import Player from './rotas/Player'
 import LoginPage from './rotas/LoginPage'
 import RegisterPage from './rotas/RegisterPage'
-import TelegramButton from './componentes/TelegramButton'
 
 const App = () => {
     const location = useLocation();
