@@ -10,10 +10,12 @@ const AppContainer = styled.div`
     width: 100%; 
     min-height: 100vh; 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     background-image: linear-gradient(90deg, #002F52 35%, #326589);
     overflow-x: hidden; /* Impedir rolagem horizontal */
+    padding-top: 20px;
 `
 const ResultadoContainer = styled.div`
     display: flex;
@@ -94,7 +96,7 @@ function Favoritos() {
 
   return (
     <AppContainer>
-      <div>
+      <div style={{ width: '100%' }} >
         <Titulo>Aqui estão seus cursos favoritos:</Titulo>
         <ResultadoContainer>
           {
