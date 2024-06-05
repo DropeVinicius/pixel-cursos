@@ -24,6 +24,7 @@ const ResultadoContainer = styled.div`
     max-width: 1200px;
     width: 100%;
     padding: 20px;
+    margin: 0 auto; /* Centraliza o contêiner */
     flex-direction: row; /* Exibição em linha por padrão */
 `
 const Resultado = styled.div`

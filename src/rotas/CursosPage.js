@@ -64,6 +64,7 @@ const Titulo = styled.h2`
     padding-top: 35px
     margin-bottom: 20px;
 `
+
 const ImagemContainer = styled.div`
     width: 100%;
     height: auto;
