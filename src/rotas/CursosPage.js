@@ -10,10 +10,12 @@ const AppContainer = styled.div`
     width: 100%; 
     min-height: 100vh; 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     background-image: linear-gradient(90deg, #002F52 35%, #326589);
     overflow-x: hidden; /* Impedir rolagem horizontal */
+    padding-top: 20px;
 `
 const ResultadoContainer = styled.div`
     display: flex;
@@ -22,6 +24,7 @@ const ResultadoContainer = styled.div`
     max-width: 1200px;
     width: 100%;
     padding: 20px;
+    margin: 0 auto; /* Centraliza o contêiner */
     flex-direction: row; /* Exibição em linha por padrão */
 `
 const Resultado = styled.div`
@@ -64,7 +67,6 @@ const Titulo = styled.h2`
     padding-top: 35px
     margin-bottom: 20px;
 `
-
 const ImagemContainer = styled.div`
     width: 100%;
     height: auto;
