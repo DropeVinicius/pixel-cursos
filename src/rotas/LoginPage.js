@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import LogoWhite from '../componentes/LogoWhite';
 
 const Container = styled.div`
   display: flex;
@@ -84,6 +85,7 @@ const LoginPage = () => {
 
   return (
     <Container>
+      <LogoWhite/> {LogoWhite}
       <Titulo>Login</Titulo>
       <Form onSubmit={handleSubmit}>
         {error && <ErrorMessage>{error}</ErrorMessage>}
