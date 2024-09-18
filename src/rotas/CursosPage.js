@@ -117,7 +117,7 @@ function CursosPage() {
                                 <ImagemContainer>
                                     <IconeContainer>
                                         <p>{curso.nome}</p>
-                                        <img src={livroImg} />
+                                        <img src={livroImg} alt="descrição da imagem"/>
                                         <AdicionarRemoverIcone cursoId={curso.id} isFavoritoInicial={false} />
                                     </IconeContainer>
                                 </ImagemContainer>
