@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const favoritosAPI = axios.create({ baseURL: "https://pixel-cursos-serverv2.onrender.com/favoritos" })
+const favoritosAPI = axios.create({ baseURL: "https://pixel-cursos.vercel.app/favoritos" })
 
 async function getFavoritos() {
     const response = await favoritosAPI.get('/')
