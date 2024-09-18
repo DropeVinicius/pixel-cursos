@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const cursosAPI = axios.create({baseURL: "http://localhost:8000/cursos"})
+const cursosAPI = axios.create({ baseURL: "https://pixel-cursos-serverv2.onrender.com/cursos"})
 
 async function getCursos() {
     const response = await cursosAPI.get('/')
