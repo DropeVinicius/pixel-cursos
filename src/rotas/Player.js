@@ -1,7 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
 
+const GlobalStyle = createGlobalStyle`
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+`
 
 const AppContainer = styled.div`
       width: 100%; 
@@ -38,7 +46,30 @@ const VideoPlayer = styled.iframe `
     }
 
 ` 
+const VideoFooter = styled.div `
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+`
 
+const BotaoProximo = styled.button `
+    background-color: #FFF;
+    color: #000;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px; /*Bordas Levemente arredondas */
+    cursor: pointer;
+    font-family: 'Inter', sans-serif; /* FONTE INTER */
+    font-weight: 500;
+
+    &:hover {
+        background-color: #e0e0e0;
+    }
+`
 
 const Player = () => {
     const location = useLocation(); // Use o hook useLocation para obter a localização atual
@@ -48,8 +79,10 @@ const Player = () => {
    const videoUrl = `https://www.youtube.com/embed/h5PNYnwApkM?si=sTxSMbDRHCaTHZqe`; 
     
     return (
+        <>
+        <GlobalStyle/>
         <AppContainer>
-            <Titulo>Player</Titulo>
+            <Titulo>#1 TREINAMENTO DEVELOPER | AZURE</Titulo>
             <VideoContainer>  
                 <VideoPlayer 
                     title="video"
@@ -58,7 +91,13 @@ const Player = () => {
                     allowFullScreen
                 />
             </VideoContainer>  
+            {/* Botão e footer abaixo do vídeo */}
+            <VideoFooter>
+                {/* O botão está alinhado à direita */}
+                <BotaoProximo>PRÓXIMO CAPÍTULO</BotaoProximo>
+            </VideoFooter>
         </AppContainer>
+        </>
     );
 }
 

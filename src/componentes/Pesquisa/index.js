@@ -5,25 +5,25 @@ import { getCursos } from '../../servicos/cursos'
 import { postFavorito } from '../../servicos/favoritos'
 
 
-const PesquisaContainer = styled.section `
+const PesquisaContainer = styled.section`
     background-image: linear-gradient (90deg, #002F52 35%, #326589 165%);
     color: #FFF;
     text-align: center;
     padding: 85px 20px;
     height: auto; /* Remover altura fixa */
 `
-const Titulo = styled.h2 `
+const Titulo = styled.h2`
     color: #FFF;
     font-size: 36px;
     text-align: center;
     width: 100%;
 `
-const Subtitulo = styled.h3 `
+const Subtitulo = styled.h3`
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 20px; /* Reduzindo a margem inferior */
 `
-const Resultado = styled.div `
+const Resultado = styled.div`
     display: flex;
     flex-direction: column; /* Alterando para coluna para telas menores */
     align-items: center;
@@ -44,15 +44,15 @@ const Resultado = styled.div `
     }
 `
 
-function Pesquisa () {
+function Pesquisa() {
     const [cursosPesquisados, setCursosPesquisados] = useState([])
-    const [ cursos, setCursos ] = useState([])
+    const [cursos, setCursos] = useState([])
 
     useEffect(() => {
         fetchCursos()
     }, [])
 
-    async function fetchCursos () {
+    async function fetchCursos() {
         const cursosDaAPI = await getCursos()
         setCursos(cursosDaAPI)
     }
@@ -60,8 +60,8 @@ function Pesquisa () {
     async function insertFavorito(id) {
         await postFavorito(id)
         alert(`Curso de id:${id} inserido com sucesso!`)
-    } 
-        
+    }
+
     return (
         <PesquisaContainer>
             <Titulo>Já sabe qual certificação deseja?</Titulo>
@@ -70,16 +70,16 @@ function Pesquisa () {
                 placeholder="Escreva o tipo de curso"
                 onBlur={evento => {
                     const textoDigitado = evento.target.value
-                    const resultadoPesquisa = cursos.filter( curso => curso.nome.includes(textoDigitado))
+                    const resultadoPesquisa = cursos.filter(curso => curso.nome.includes(textoDigitado))
                     setCursosPesquisados(resultadoPesquisa)
                 }}
             />
-            {cursosPesquisados.map( curso => (
+            {cursosPesquisados.map(curso => (
                 <Resultado onClick={() => insertFavorito(curso.id)}>
                     <img src={curso.src} />
                     <p>{curso.nome}</p>
                 </Resultado>
-            ) ) }
+            ))}
         </PesquisaContainer>
     )
 }
