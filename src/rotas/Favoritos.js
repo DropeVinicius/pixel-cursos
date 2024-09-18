@@ -107,7 +107,7 @@ function Favoritos() {
                 <ImagemContainer>
                   <IconeContainer>
                     <p>{favorito.nome}</p>
-                      <img src={livroImg} alt="descrição da imagem" />
+                      <img src={livroImg} alt="imagem de um livro" />
                     <AdicionarRemoverIcone cursoId={favorito.id} isFavoritoInicial={true} />
                   </IconeContainer>
                 </ImagemContainer>
