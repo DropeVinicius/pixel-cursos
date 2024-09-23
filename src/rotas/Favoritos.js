@@ -1,10 +1,19 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components'
 import { deleteFavorito, getFavoritos } from '../servicos/favoritos';
-import livroImg from '../imagens/livro.png'
+import livroImg from '../imagens/bannerofc.png'
 import AdicionarRemoverIcone from '../componentes/AdicionarRemoverIcone/AdicionarRemoverIcone';
+import azureDeveloperImg from '../imagens/bannerofc.png';
+import azureSolutionArchitectImg from '../imagens/bannerofc2.png';
+import azureAdministratorImg from '../imagens/bannerofc3.png';
+import azureFundamentalsImg from '../imagens/bannerofc4.png';
 
-
+const imagemPorId = {
+  "1": azureDeveloperImg,
+  "2": azureSolutionArchitectImg,
+  "3": azureAdministratorImg,
+  "4": azureFundamentalsImg
+};
 //Defina o estilo dos componentes
 const AppContainer = styled.div`
     width: 100%; 
@@ -107,7 +116,7 @@ function Favoritos() {
                 <ImagemContainer>
                   <IconeContainer>
                     <p>{favorito.nome}</p>
-                      <img src={livroImg} alt="imagem de um livro" />
+                      <img src={imagemPorId[favorito.id]} alt={`Imagem do curso ${favorito.nome}`} />
                     <AdicionarRemoverIcone cursoId={favorito.id} isFavoritoInicial={true} />
                   </IconeContainer>
                 </ImagemContainer>

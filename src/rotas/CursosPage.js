@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import livroImg from '../imagens/livro.png'
+import livroImg from '../imagens/bannerofc.png'
 import { getCursos } from '../servicos/cursos';
 import { postFavorito } from '../servicos/favoritos'
 import AdicionarRemoverIcone from '../componentes/AdicionarRemoverIcone/AdicionarRemoverIcone';
+import azureDeveloperImg from '../imagens/bannerofc.png';
+import azureSolutionArchitectImg from '../imagens/bannerofc2.png';
+import azureAdministratorImg from '../imagens/bannerofc3.png';
+import azureFundamentalsImg from '../imagens/bannerofc4.png';
 
 //Defina o estilo dos componentes
 const AppContainer = styled.div`
@@ -76,6 +80,12 @@ const ImagemContainer = styled.div`
 const IconeContainer = styled.div`
     width: 210px;
 `
+const imagemPorId = {
+    "1": azureDeveloperImg,
+    "2": azureSolutionArchitectImg,
+    "3": azureAdministratorImg,
+    "4": azureFundamentalsImg
+};
 
 //Componente da página de cursos
 function CursosPage() {
@@ -117,7 +127,7 @@ function CursosPage() {
                                 <ImagemContainer>
                                     <IconeContainer>
                                         <p>{curso.nome}</p>
-                                        <img src={livroImg} alt="imagem de um livro"/>
+                                        <img src={imagemPorId[curso.id]} alt={`Imagem do curso ${curso.nome}`} />
                                         <AdicionarRemoverIcone cursoId={curso.id} isFavoritoInicial={false} />
                                     </IconeContainer>
                                 </ImagemContainer>
