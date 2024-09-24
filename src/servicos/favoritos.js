@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const favoritosAPI = axios.create({ baseURL: "http://localhost:8000/favoritos" })
+const favoritosAPI = axios.create({ baseURL: "https://pixel-cursos-serverv2-dd5c274eb09d.herokuapp.com/" })
 
 async function getFavoritos() {
     const response = await favoritosAPI.get('/')
