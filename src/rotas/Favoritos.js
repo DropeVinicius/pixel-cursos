@@ -45,7 +45,7 @@ const Resultado = styled.div`
     padding: 20px;
     border-radius: 10px;
     transition: box-shadow 0.3s ease;
-    background-color: #002F52;
+    //background-color: #002F52;
     color: #FFF;
     width: calc(50% - 20px); /* Ajuste para 2 cards por linha */
     box-sizing: border-box;
@@ -85,6 +85,11 @@ const ImagemContainer = styled.div`
 const IconeContainer = styled.div`
     width: 210px;
 `
+const ImagemBorda = styled.img`
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+`
 
 function Favoritos() {
   const [favoritos, setFavoritos] = useState([])
@@ -116,7 +121,7 @@ function Favoritos() {
                 <ImagemContainer>
                   <IconeContainer>
                     <p>{favorito.nome}</p>
-                      <img src={imagemPorId[favorito.id]} alt={`Imagem do curso ${favorito.nome}`} />
+                      <ImagemBorda src={imagemPorId[favorito.id]} alt={`Imagem do curso ${favorito.nome}`} />
                     <AdicionarRemoverIcone cursoId={favorito.id} isFavoritoInicial={true} />
                   </IconeContainer>
                 </ImagemContainer>

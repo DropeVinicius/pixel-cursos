@@ -13,7 +13,10 @@ const Container = styled.div`
 `;
 
 const Titulo = styled.h2`
-  color: #fff;
+  color: #013358;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Form = styled.form`
@@ -54,6 +57,8 @@ const ErrorMessage = styled.p`
 const RegisterText = styled.p`
   margin-top: 15px;
   color: #000;
+  display: flex;
+  justify-content: space-between;
 `
 const RegisterLink = styled(Link) `
   color: #002F52;
@@ -86,22 +91,22 @@ const LoginPage = () => {
   return (
     <Container>
       <LogoWhite/> {LogoWhite}
-      <Titulo>Login</Titulo>
       <Form onSubmit={handleSubmit}>
         {error && <ErrorMessage>{error}</ErrorMessage>}
+        <Titulo>Faça seu login</Titulo>
         <Input
           type="email"
-          placeholder="Email"
+          placeholder="Digite seu email..."
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <Input
           type="password"
-          placeholder="Password"
+          placeholder="Digite sua senha..."
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button type="submit">Login</Button>
+        <Button type="submit">ENTRAR</Button>
         <RegisterText>
           Não possui conta?
           <RegisterLink to="/register">Cadastrar</RegisterLink>
