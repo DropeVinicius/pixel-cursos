@@ -5,6 +5,8 @@ import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter } from "react-router-dom"
 import App from './HeaderApp'
 import TelegramButton from './componentes/TelegramButton'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const GlobalStyle = createGlobalStyle`
     body {
