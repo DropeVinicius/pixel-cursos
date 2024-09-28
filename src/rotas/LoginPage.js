@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import LogoWhite from '../componentes/LogoWhite';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Container = styled.div`
   display: flex;
@@ -60,7 +63,7 @@ const RegisterText = styled.p`
   display: flex;
   justify-content: space-between;
 `
-const RegisterLink = styled(Link) `
+const RegisterLink = styled(Link)`
   color: #002F52;
   text-decoration: underline;
   margin-left: 5px;
@@ -75,22 +78,38 @@ const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
       setError('Ambos os campos são obrigatórios');
     } else {
       setError('');
-      // Handle login logic here
-      console.log('Email:', email);
-      console.log('Senha:', password);
+      try {
+        const response = await axios.post('https://pixel-cursos-serverv2-dd5c274eb09d.herokuapp.com/login', {
+          email,
+          password
+        });
+
+        // Notificação de sucesso
+        console.log('Resposta do servidor', response.data);
+        toast.success('Login realizado com sucesso!');
+
+        navigate('/')
+
+        // Redirecionar ou fazer algo após o login
+      } catch (err) {
+        console.log('Erro ao fazer login:', err.response);
+        setError(err.response?.data?.message || 'Erro ao fazer login');
+        toast.error(err.response?.data?.message || 'Erro ao fazer login'); // Notificação de erro
+      }
     }
   };
 
   return (
     <Container>
-      <LogoWhite/> {LogoWhite}
+      <LogoWhite /> {LogoWhite}
       <Form onSubmit={handleSubmit}>
         {error && <ErrorMessage>{error}</ErrorMessage>}
         <Titulo>Faça seu login</Titulo>

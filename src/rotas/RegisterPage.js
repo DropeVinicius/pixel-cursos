@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import LogoWhite from '../componentes/LogoWhite';
+import axios from 'axios'
+import { toast } from 'react-toastify';
 
 const Container = styled.div`
   display: flex;
@@ -73,7 +75,7 @@ const RegisterPage = () => {
   const [confirmPassword, setConfirmPassword] = useState(''); // Estado para confirmar senha
   const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Validação para garantir que as senhas coincidam
     if (!name || !email || !password || !confirmPassword) {
@@ -82,16 +84,28 @@ const RegisterPage = () => {
       setError('As senhas não coincidem');
     } else {
       setError('');
-      // Handle registration logic here
-      console.log('Nome:', name);
-      console.log('Email:', email);
-      console.log('Senha:', password);
+      try {
+        const response = await axios.post('https://pixel-cursos-serverv2-dd5c274eb09d.herokuapp.com/register', {
+          name,
+          email,
+          password,
+          confirmPassword
+        });
+
+        // Notificação 
+        toast.success('Conta registrada com sucesso!');
+        console.log(response.data);
+        // redirecionar ou limpar os campos
+      } catch (err) {
+        setError(err.response?.data?.message || 'Ocorreu um erro ao registrar');
+        toast.error(err.response?.data?.message || 'Erro ao registrar')
+      }
     }
   };
 
   return (
     <Container>
-      <LogoWhite /> {LogoWhite}
+      <LogoWhite />
       <Form onSubmit={handleSubmit}>
         {error && <ErrorMessage>{error}</ErrorMessage>}
         <Titulo>Cadastre-se</Titulo>
