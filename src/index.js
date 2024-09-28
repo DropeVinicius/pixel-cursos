@@ -32,6 +32,7 @@ root.render(
     <GlobalStyle />
     <BrowserRouter>
       <App />
+      <ToastContainer />
       <TelegramButton/>
     </BrowserRouter>
   </React.StrictMode>
