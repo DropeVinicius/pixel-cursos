@@ -64,10 +64,10 @@ function Pesquisa() {
 
     return (
         <PesquisaContainer>
-            <Titulo>Já sabe qual certificação deseja?</Titulo>
-            <Subtitulo>Encontre o curso ideal para trilhar.</Subtitulo>
+            <Titulo>Tem ideia de qual curso vai escolher?</Titulo>
+            <Subtitulo>Busque aqui pelo curso do seu interesse</Subtitulo>
             <Input
-                placeholder="Escreva o tipo de curso"
+                placeholder="Digite aqui..."
                 onBlur={evento => {
                     const textoDigitado = evento.target.value
                     const resultadoPesquisa = cursos.filter(curso => curso.nome.includes(textoDigitado))
