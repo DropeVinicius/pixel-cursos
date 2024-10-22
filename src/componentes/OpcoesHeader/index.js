@@ -27,7 +27,7 @@ const Opcoes = styled.ul`
     gap: 10px; /* Adiciona espaço entre as opções */
 `
 
-const textoOpcoes = ['CURSOS','FAVORITOS']
+const textoOpcoes = ['CURSOS', 'FAVORITOS', 'SOBRE NÓS']
 
 function OpcoesHeader () {
     return (
