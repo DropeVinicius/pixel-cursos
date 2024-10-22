@@ -8,7 +8,7 @@ import HomeIntro from '../componentes/Introducao'
 const AppContainer = styled.div`
       width: 100%
       max-width: 1200px;
-      padding: 20px;
+      padding: 0px;
       background-image: linear-gradient(90deg, #002F52 35%, #326589); 
 `
 
