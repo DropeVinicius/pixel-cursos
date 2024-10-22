@@ -2,6 +2,7 @@ import Header from '../componentes/Header'
 import Pesquisa from '../componentes/Pesquisa'
 import UltimosLancamentos from '../componentes/UltimosLancamentos'
 import styled from 'styled-components'
+import Footer, { FooterWrapper } from '../componentes/Rodape'
 
 const AppContainer = styled.div`
       width: 100%
@@ -15,6 +16,9 @@ function Home() {
     <AppContainer>
       <Pesquisa />
       <UltimosLancamentos />
+      <FooterWrapper>
+        <Footer/>
+      </FooterWrapper>
     </AppContainer>
   );
 }
