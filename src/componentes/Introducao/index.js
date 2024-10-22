@@ -32,7 +32,7 @@ const TextContainer = styled.div`
 const MainText = styled.h1`
   font-size: 3rem;
   font-weight: bold;
-  color: #333;
+  color: #002F52;
   margin-bottom: 30px;
 
   @media (max-width: 768px) {
@@ -42,7 +42,7 @@ const MainText = styled.h1`
 
 const DescriptionText = styled.p`
   font-size: 1.4rem;
-  color: #666;
+  color: #002F52;
   line-height: 1.6;
 
   @media (max-width: 768px) {
