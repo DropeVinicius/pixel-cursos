@@ -1,7 +1,7 @@
 import curso from '../../imagens/azdev.jpg'
 import curso2 from '../../imagens/azadm.jpg'
-import curso3 from '../../imagens/azeng.jpg'
-import curso4 from '../../imagens/azfundamentals.jpg'
+import curso3 from '../../imagens/azfundamentals.jpg'
+import curso4 from '../../imagens/azeng.jpg'
 
 export const cursos = [
     {
@@ -19,17 +19,17 @@ export const cursos = [
     },
 
     {
-        nome: 'Devops Engineer Expert - AZ-400',
+        nome: 'AZ Fundamentals - AZ-900',
         id: 3,
         src: curso3,
-        link: ''
+        link: 'https://www.youtube.com/watch?v=h5PNYnwApkM&list=PL_yq9hmeKAk_rUvgo0KECZYI1bKzcyncC'
     },
 
     {
-        nome: 'AZ Fundamentals - AZ-900',
+        nome: 'Devops Engineer Expert - AZ-400',
         id: 4,
         src: curso4,
-        link: 'https://www.youtube.com/watch?v=h5PNYnwApkM&list=PL_yq9hmeKAk_rUvgo0KECZYI1bKzcyncC'
+        link: ''
     }
 ];
 
