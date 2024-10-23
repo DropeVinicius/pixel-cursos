@@ -39,13 +39,11 @@ const HamburgerIcon = styled.div`
   cursor: pointer;
 
   @media (max-width: 768px) {
-    display: block;
+    display: flex;
+    align-items: center;
     font-size: 24px;
+    margin-left: auto; /* Empurra o ícone para a direita */
     padding: 10px;
-    position: absolute;
-    top: 7%; /* Ajusta a posição vertical para o meio do contêiner */
-    transform: translateY(-50%); /* Centraliza verticalmente */
-    right: 10px; /* Mantém a posição à direita */
   }
 `
 
