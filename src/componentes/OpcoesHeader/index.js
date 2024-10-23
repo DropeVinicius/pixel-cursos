@@ -43,7 +43,7 @@ const HamburgerIcon = styled.div`
     font-size: 24px;
     padding: 10px;
     position: absolute;
-    top: 6%; /* Ajusta a posição vertical para o meio do contêiner */
+    top: 7%; /* Ajusta a posição vertical para o meio do contêiner */
     transform: translateY(-50%); /* Centraliza verticalmente */
     right: 10px; /* Mantém a posição à direita */
   }
