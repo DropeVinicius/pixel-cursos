@@ -49,6 +49,7 @@ function UltimosLancamentos() {
                 {cursos.map (curso => (
                         <CursoLink to={`/player?id=${curso.id}`} key={curso.id}>
                             <CursoImagem src={curso.src} style={estiloImagem} alt={curso.nome}/>
+                            <p>{curso.nome}</p>
                         </CursoLink>
                 ))}
             </NovosCursosContainer>     
