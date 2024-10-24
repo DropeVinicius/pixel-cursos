@@ -7,6 +7,7 @@ import CursosPage from './rotas/CursosPage'
 import Player from './rotas/Player'
 import LoginPage from './rotas/LoginPage'
 import RegisterPage from './rotas/RegisterPage'
+import SobreNos from './rotas/SobreNos'
 
 const App = () => {
     const location = useLocation();
@@ -22,6 +23,7 @@ const App = () => {
                 <Route path="/player" element={<Player />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
+                <Route path="/sobre-nós" element={<SobreNos />} /> 
             </Routes>
         </>
     );

@@ -35,9 +35,10 @@ const Opcoes = styled.ul`
 
 // Estilização do menu hambúrguer
 const HamburgerIcon = styled.div`
-  display: none;
+  display: none; /* Escondido por padrão em telas maiores */
+  align-items: center;
   cursor: pointer;
-
+  
   @media (max-width: 768px) {
     display: flex;
     align-items: center;
@@ -68,45 +69,45 @@ const MobileMenu = styled.ul`
   }
 `
 
-const textoOpcoes = ['CURSOS', 'FAVORITOS', 'SOBRE NÓS'];
+const textoOpcoes = ['CURSOS', 'FAVORITOS', 'SOBRE-NÓS'];
 
 function OpcoesHeader() {
-    const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
-    return (
-        <>
-            {/* Ícone do menu hambúrguer */}
-            <HamburgerIcon onClick={toggleMenu}>
-                &#9776;
-            </HamburgerIcon>
+  return (
+    <>
+      {/* Ícone do menu hambúrguer */}
+      <HamburgerIcon onClick={toggleMenu}>
+        &#9776;
+      </HamburgerIcon>
 
-            {/* Menu desktop */}
-            <Opcoes>
-                {textoOpcoes.map((texto) => (
-                    <StyledLink to={`/${texto.toLowerCase()}`} key={texto}>
-                        <Opcao>
-                            <p>{texto}</p>
-                        </Opcao>
-                    </StyledLink>
-                ))}
-            </Opcoes>
+      {/* Menu desktop */}
+      <Opcoes>
+        {textoOpcoes.map((texto) => (
+          <StyledLink to={`/${texto.toLowerCase()}`} key={texto}>
+            <Opcao>
+              <p>{texto}</p>
+            </Opcao>
+          </StyledLink>
+        ))}
+      </Opcoes>
 
-            {/* Menu mobile */}
-            <MobileMenu open={menuOpen}>
-                {textoOpcoes.map((texto) => (
-                    <StyledLink to={`/${texto.toLowerCase()}`} key={texto}>
-                        <Opcao>
-                            <p>{texto}</p>
-                        </Opcao>
-                    </StyledLink>
-                ))}
-            </MobileMenu>
-        </>
-    );
+      {/* Menu mobile */}
+      <MobileMenu open={menuOpen}>
+        {textoOpcoes.map((texto) => (
+          <StyledLink to={`/${texto.toLowerCase()}`} key={texto}>
+            <Opcao>
+              <p>{texto}</p>
+            </Opcao>
+          </StyledLink>
+        ))}
+      </MobileMenu>
+    </>
+  );
 }
 
 export default OpcoesHeader;
