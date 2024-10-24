@@ -189,7 +189,7 @@ const integrantes = [
         descricao: 'FIAP - SISTEMAS PARA INTERNET',
         avatar: andre,
         linkedin: 'https://www.linkedin.com/in/andre-rosa-ferreira-filho/',
-        github: '',
+        github: 'https://github.com/dedeferreira',
         instagram: 'https://www.instagram.com/_androsa/'
     },
     {
