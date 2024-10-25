@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { deleteFavorito, getFavoritos } from '../servicos/favoritos';
 import livroImg from '../imagens/bannerofc.png'
 import AdicionarRemoverIcone from '../componentes/AdicionarRemoverIcone/AdicionarRemoverIcone';
+import Footer, { FooterWrapper } from '../componentes/Rodape'
 import azureDeveloperImg from '../imagens/bannerofc.png';
 import azureSolutionArchitectImg from '../imagens/bannerofc2.png';
 import azureAdministratorImg from '../imagens/bannerofc3.png';
@@ -135,6 +136,9 @@ function Favoritos() {
           }
         </ResultadoContainer>
       </div>
+      <FooterWrapper>
+        <Footer />
+      </FooterWrapper>
     </AppContainer>
   );
 }

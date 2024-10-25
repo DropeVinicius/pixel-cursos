@@ -4,6 +4,7 @@ import livroImg from '../imagens/bannerofc.png'
 import { getCursos } from '../servicos/cursos';
 import { postFavorito } from '../servicos/favoritos'
 import AdicionarRemoverIcone from '../componentes/AdicionarRemoverIcone/AdicionarRemoverIcone';
+import Footer, { FooterWrapper } from '../componentes/Rodape'
 import azureDeveloperImg from '../imagens/bannerofc.png';
 import azureSolutionArchitectImg from '../imagens/bannerofc2.png';
 import azureAdministratorImg from '../imagens/bannerofc3.png';
@@ -146,6 +147,9 @@ function CursosPage() {
                     }
                 </ResultadoContainer>
             </div>
+            <FooterWrapper>
+                <Footer />
+            </FooterWrapper>
         </AppContainer>
     );
 };
