@@ -7,12 +7,16 @@ import azureDeveloperImg from '../imagens/bannerofc.png';
 import azureSolutionArchitectImg from '../imagens/bannerofc2.png';
 import azureAdministratorImg from '../imagens/bannerofc3.png';
 import azureFundamentalsImg from '../imagens/bannerofc4.png';
+import azdevbanner from '../imagens/azdevbanner.jpg'
+import azadmbanner from '../imagens/azadmbanner.jpg'
+import azfundamentalsbanner from '../imagens/azfundamentalsbanner.jpg'
+import azengbanner from '../imagens/azengbanner.jpg'
 
 const imagemPorId = {
-  "1": azureDeveloperImg,
-  "2": azureSolutionArchitectImg,
-  "3": azureAdministratorImg,
-  "4": azureFundamentalsImg
+  "1": azdevbanner,
+  "2": azadmbanner,
+  "3": azfundamentalsbanner,
+  "4": azengbanner
 };
 //Defina o estilo dos componentes
 const AppContainer = styled.div`
